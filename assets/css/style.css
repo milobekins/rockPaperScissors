@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+
+#chatInput {
+    width: 80%;
+}
+#chatInputDiv {
+    width: 100%;
+}
+#chatbox {
+    height:200px;
+    width: 100%;
+    overflow: scroll;
+}
