@@ -170,102 +170,121 @@ database.ref().on("value", function(snapshot){
         if (player1Choice === "Rock" && player2Choice === "Paper") {
             gameDone = true;
             $(".middleSpace").text(player2Name + " Wins!");
+            $(".middleSpace").slideToggle();
             player2Wins++;
             database.ref("/players/player2/Wins").set(player2Wins);
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
             },2000) 
         }   
         if (player1Choice === "Rock" && player2Choice === "Scissors") {
             gameDone = true;
             $(".middleSpace").text(player1Name + " Wins!");
+            $(".middleSpace").slideToggle();
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             player1Wins++;
             database.ref("/players/player1/Wins").set(player1Wins);
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
+
             },2000)
         }  
         if (player1Choice === "Rock" && player2Choice === "Rock") {
             gameDone = true;
             $(".middleSpace").text("Tie!");
+            $(".middleSpace").slideToggle();
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
             },2000)
         }
         if (player1Choice === "Paper" && player2Choice === "Scissors") {
             gameDone = true;
             $(".middleSpace").text(player2Name + " Wins!");
+            $(".middleSpace").slideToggle();
             player2Wins++;
             database.ref("/players/player2/Wins").set(player2Wins);
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
             },2000) 
         }   
         if (player1Choice === "Paper" && player2Choice === "Rock") {
             gameDone = true;
             $(".middleSpace").text(player1Name + " Wins!");
+            $(".middleSpace").slideToggle();
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             player1Wins++;
             database.ref("/players/player1/Wins").set(player1Wins);
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
             },2000)
         }  
         if (player1Choice === "Paper" && player2Choice === "Paper") {
             gameDone = true;
             $(".middleSpace").text("Tie!");
+            $(".middleSpace").slideToggle();
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
             },2000)
         }
         if (player1Choice === "Scissors" && player2Choice === "Rock") {
             gameDone = true;
             $(".middleSpace").text(player2Name + " Wins!");
+            $(".middleSpace").slideToggle();
             player2Wins++;
             database.ref("/players/player2/Wins").set(player2Wins);
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
             },2000) 
         }   
         if (player1Choice === "Scissors" && player2Choice === "Paper") {
             gameDone = true;
             $(".middleSpace").text(player1Name + " Wins!");
+            $(".middleSpace").slideToggle();
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             player1Wins++;
             database.ref("/players/player1/Wins").set(player1Wins);
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
             },2000)
         }  
         if (player1Choice === "Scissors" && player2Choice === "Scissors") {
             gameDone = true;
             $(".middleSpace").text("Tie!");
+            $(".middleSpace").slideToggle();
             database.ref("/players/player1/Choice").set("");
             database.ref("/players/player2/Choice").set("");
             setTimeout(function() {
                 runGame();
+                $(".middleSpace").slideToggle();
                 $(".middleSpace").empty();
             },2000)
         }
@@ -288,7 +307,8 @@ $("#nameSubmit").on("click", function() {
     if (player1Connected === false) {
         player1Name = $("#nameInput").val().trim();
         $("#login").slideToggle();
-        $("#topDiv").text("Hello " + player1Name + "! You are player 1.");
+        $(".middleSpace").text("Hello " + player1Name + "! You are player 1.");
+        $(".middleSpace").slideToggle();
         playerNumber = 1;
         database.ref("/playersConnected/player1").set({
             connected: true,
@@ -299,13 +319,17 @@ $("#nameSubmit").on("click", function() {
             Wins: 0,
             Losses: 0
         })
-
+        setTimeout(function() {
+            $(".middleSpace").slideToggle();
+        },2000)
         
     }
     else if (player2Connected === false) {
         player2Name = $("#nameInput").val().trim();
         $("#login").slideToggle();
-        $("#topDiv").text("Hello " + player2Name + "! You are player 2.");
+        $(".middleSpace").text("Hello " + player2Name + "! You are player 2.");
+        $(".middleSpace").slideToggle();
+
         playerNumber = 2;
         database.ref("/playersConnected/player2").set({
             connected: true,
@@ -316,6 +340,9 @@ $("#nameSubmit").on("click", function() {
             Wins: 0,
             Losses: 0
         })
+        setTimeout(function() {
+            $(".middleSpace").slideToggle();
+        },2000)
 
     }
     else {

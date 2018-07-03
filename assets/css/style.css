@@ -1,14 +1,35 @@
-h1 {
+.header {
     text-align: center;
+    font-family: cursive;
+    text-shadow: 1px 1px 1px darkgrey;
+    padding: 5px;
+}
+body {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("../images/abstract-attractive-backdrop-988872.jpg")
 }
 
+.bodyBox {
+    padding: 5px;
+    height: 100%;
+}
+#login {
+    padding: 3px;
+    align: center;
+}
+.middleSpace {
+    display: none;
+}
 #chatInput {
     width: 80%;
 }
 #chatInputDiv {
     width: 100%;
+    padding: 3px;
 }
 #chatbox {
+    text-align: left;
     height:200px;
     width: 100%;
     overflow: scroll;

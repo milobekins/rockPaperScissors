@@ -15,36 +15,38 @@
     </head>
     <body>
         <div class="container">
-            <div class="row header border border-bottom">
-                <h1>Rock Paper Scissors</h1>
+            <div class="row header bg-light border border-bottom border-dark rounded">
+                <div class="col-12">
+                    <h1>Rock Paper Scissors</h1>
+                </div>
             </div>
             <div class="row">
-                <div class="offset-4"></div>
-                <div class="col col-4" id="topDiv">
+<!--                 <div class="offset-4"></div>
+ -->                <div class="col col-12 d-flex justify-content-center" id="topDiv">
                     <div id="login">
                         <form class="form-inline">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="nameInput" aria-describedby="name" placeholder="Name">
-                                <button type="submit" class="btn btn-primary" id="nameSubmit">Submit</button>
+                                <button type="submit" class="btn btn-secondary border border-dark" id="nameSubmit">Submit</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="offset-4"></div> 
-            </div>
+<!--                 <div class="offset-4"></div> 
+ -->            </div>
             <div class="row">
-                <div class="col-4 border">
-                    <div class="player1Space">
+                <div class="col-4">
+                    <div class="player1Space border border-dark rounded bg-light bodyBox">
                         <div class="player1Name">Waiting for Player1..</div>
                         <div class="player1Score">Wins: <span class="player1Wins">0</span> Losses: <span class="player1Losses">0</span></div>
                         <div class="choices1"></div>
                     </div>
                 </div>
-                <div class="col-4 border">
-                    <div class="middleSpace"></div>
+                <div class="col-4">
+                    <div class="middleSpace border border-dark rounded bg-light"></div>
                 </div>
-                <div class="col-4 border">
-                    <div class="player2Space">
+                <div class="col-4">
+                    <div class="player2Space border border-dark rounded bg-light bodyBox">
                         <div class="player2Name">Waiting for Player2..</div>
                         <div class="player2Score">Wins: <span class="player2Wins">0</span> Losses: <span class="player2Losses">0</span></div>
                         <div class="choices2"></div>
@@ -52,17 +54,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="offset-2"></div>
-                <div class="col col-8">
-                    <div class="border" id="chatbox"></div>
+                <div class="offset-md-2"></div>
+                <div class="col col-12 col-md-8">
+                    <div class="border border-dark rounded bg-light bodyBox" id="chatbox"></div>
                     <form class="form-inline">
                         <div class="form-group" id="chatInputDiv">
                             <input type="text" class="form-control" id="chatInput" aria-describedby="chatInput" placeholder="">
-                            <button type="submit" class="btn btn-primary" id="chatSubmit">Submit</button>
+                            <button type="submit" class="btn btn-secondary border border-dark" id="chatSubmit">Submit</button>
                         </div>
                     </form>
                 </div>
-                <div class="offset-2"></div>
+                <div class="offset-md-2"></div>
             </div>
         </div>
 
