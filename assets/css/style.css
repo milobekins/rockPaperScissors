@@ -19,6 +19,12 @@ body {
     padding: 3px;
     align: center;
 }
+.playerScore {
+    font-size: 12px;
+}
+.playerName {
+    font-size: 16px;
+}
 .middleSpace {
     display: none;
 }
