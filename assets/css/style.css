@@ -2,6 +2,7 @@
     text-align: center;
     font-family: cursive;
     text-shadow: 1px 1px 1px darkgrey;
+    font-weight: bold;
     padding: 5px;
 }
 body {
@@ -33,4 +34,14 @@ body {
     height:200px;
     width: 100%;
     overflow: scroll;
+    margin: 3px;
+}
+.btn {
+    margin: 1px;
+}
+
+@media screen and (max-width: 575px) {
+    #chatInput {
+        width: 100%;
+    }
 }

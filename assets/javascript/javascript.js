@@ -132,7 +132,7 @@ database.ref().on("value", function(snapshot){
                 $(".choices2").empty();
     }
     else {
-        $(".player1Name").text(player1Name);
+        $(".player1Name").text(player1Name).css("font-weight", "bold");
 
     }
     if (player2Connected === false) {
@@ -151,7 +151,7 @@ database.ref().on("value", function(snapshot){
         }        
     }
     else {
-        $(".player2Name").text(player2Name);
+        $(".player2Name").text(player2Name).css("font-weight", "bold");
 
     }
     
