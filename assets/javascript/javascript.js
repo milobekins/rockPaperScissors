@@ -38,7 +38,7 @@ var connectionsRef = database.ref("/connections");
 var connectedRef = database.ref(".info/connected")
 
 var buttonMaker = function(choice) {
-    var choiceBtn = $("<button>").addClass("btn btn-primary choiceBtn").text(choice).attr("data-type", choice);
+    var choiceBtn = $("<button>").addClass("btn btn-secondary choiceBtn").text(choice).attr("data-type", choice);
     if (playerNumber === 1){
         $(".choices1").append(choiceBtn);
     }
@@ -59,7 +59,7 @@ var runGame = function() {
         if (playerNumber === 1) {
             player1Choice = that;
             database.ref("/players/player1/Choice").set(player1Choice);
-            $(".choices1").empty();
+            $(".choices1").empty();      
         }
         if (playerNumber === 2) {
             player2Choice = that;
@@ -124,12 +124,15 @@ database.ref().on("value", function(snapshot){
                 message: "Player 1 Has Disconnected"
             })
             $(".choices2").empty();
+
+
             gameRunning = false;
         }
         else {
             $(".player1Name").text("Waiting for Player1..");
+            $(".choices2").empty();
         }
-                $(".choices2").empty();
+
     }
     else {
         $(".player1Name").text(player1Name).css("font-weight", "bold");
@@ -347,10 +350,18 @@ $("#nameSubmit").on("click", function() {
     }
     else {
         $("#login").slideToggle();
-        $("#topDiv").text("There are currently two players playing.");
+        $(".middleSpace").text("There are Currently two users playing");
+        $(".middleSpace").slideToggle();
+        setTimeout(function() {
+            $(".middleSpace").slideToggle();
+        },2000)
+        setTimeout(function() {
+            $("#login").slideToggle();
+        },2000)
+
         playerNumber = 3;
     }
-    
+   $("#nameInput").val("");
 }) 
 
 $("#chatSubmit").on("click", function() {

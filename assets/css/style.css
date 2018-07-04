@@ -1,7 +1,7 @@
 .header {
     text-align: center;
     font-family: cursive;
-    text-shadow: 1px 1px 1px darkgrey;
+    text-shadow: 1px 2px 1px lightblue;
     font-weight: bold;
     padding: 5px;
 }
@@ -44,6 +44,7 @@ body {
 }
 .btn {
     margin: 1px;
+    color: lightblue;
 }
 
 @media screen and (max-width: 575px) {
